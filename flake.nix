@@ -13,8 +13,9 @@
           inherit system;
         };
       in {
-        packages = {
+        packages = rec {
           google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+          default = google-cloud-sdk;
         };
       }
     );
